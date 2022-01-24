@@ -1,0 +1,6 @@
+name: pi-log-forwarder
+heroku:
+  app: pi-sensor
+  env:
+    - CLOUDMQTT_URL
+    - LOG_FORWARDER_SYSTEMD_UNIT

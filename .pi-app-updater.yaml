@@ -4,3 +4,13 @@ heroku:
   env:
     - CLOUDMQTT_URL
     - LOG_FORWARDER_SYSTEMD_UNIT
+
+systemd:
+  Unit:
+    Description: Log Forwarder
+    After: systemd-journald.service
+    Requires: systemd-journald.service
+  Service:
+    TimeoutStartSec: 0
+    Restart: on-failure
+    RestartSec: 5s
